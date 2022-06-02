@@ -55,10 +55,23 @@
 			cursor: pointer;
 		}
 		.heart{
+			display: inline-block;
+			animation: pulse 0.8s infinite;
 			font-family: "ocealen";
 			/*color: magenta;*/
 			cursor: pointer !important;
 			text-shadow: 1px 1px 2px #333;
+		}
+		@keyframes pulse {
+		  0%{
+		    font-size: 1em;
+		  }
+		  50% {
+		    font-size: 1.08em;
+		  }
+		  100% {
+		    font-size: 1em;
+		  }
 		}
 	</style>
 </head>
@@ -81,7 +94,8 @@
 		el.style.position = "absolute";
 		el.style.left = event.clientX-7+'px';
 		el.style.top = event.clientY-10+'px';
-		el.style.fontSize = getRandomArbitrary(10,70)+"px";
+		el.style.fontSize = getRandomArbitrary(10,100)+"px";
+		el.style.animationDuration = getRandomArbitrary(0.5,2)+"s";
 
 		var item = items[Math.floor(Math.random()*items.length)];
 		el.style.color = item;
